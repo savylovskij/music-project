@@ -1,8 +1,43 @@
 @use 'theme';
+@use 'adaptive';
 
 :host {
   display: flex;
-  height: 4rem;
-  background-color: theme.$colors-background-base;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  padding: 0 1rem;
+  background-color: theme.$colors-background-black;
   color: theme.$colors-text-grey;
+
+  @media (max-width: adaptive.$adaptive-xSmall) {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+.copyright {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.social-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: theme.$colors-background-black-light;
+
+  &:hover {
+    background-color: theme.$colors-background-grey;
+  }
 }
