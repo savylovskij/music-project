@@ -1,0 +1,76 @@
+@use 'theme';
+@use 'mixins';
+
+:host {
+  padding: 1rem;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  color: white;
+  background: theme.$colors-background-card;
+
+  &:hover {
+    background: theme.$colors-background-black-light;
+
+    .button-play {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(-0.5rem);
+
+      &:hover {
+        transform: translateY(-0.5rem) scale(1.04);
+        background: theme.$colors-background-green-light;
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  width: 8.5rem;
+}
+
+.wrapper-img {
+  display: flex;
+  position: relative;
+}
+
+.album-image {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+
+.button-play {
+  @include mixins.reset-button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  bottom: 0;
+  right: 0.25rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: theme.$colors-background-green;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: theme.$colors-text-grey;
+}

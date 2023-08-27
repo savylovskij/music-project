@@ -9,7 +9,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 4rem;
+  height: var(--header);
   width: 100%;
   background-color: theme.$colors-background-black;
   color: theme.$colors-text-grey;

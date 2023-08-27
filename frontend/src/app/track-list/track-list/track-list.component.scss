@@ -1,0 +1,18 @@
+@use 'adaptive';
+
+:host {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  align-items: center;
+  justify-content: center;
+  grid-gap: 1rem;
+  min-width: 18rem;
+
+  @media (width < adaptive.$adaptive-medium) {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @media (width < adaptive.$adaptive-xSmall) {
+    grid-template-columns: repeat(2, auto);
+  }
+}
